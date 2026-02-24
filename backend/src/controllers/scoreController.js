@@ -1,3 +1,4 @@
+const pool = require("../config/db"); // <-- add this line
 exports.getScoreBreakdown = async (req, res) => {
   try {
     const [data] = await pool.query(
