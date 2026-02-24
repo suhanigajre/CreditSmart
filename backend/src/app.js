@@ -4,6 +4,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const authRoutes = require("./routes/authRoutes");
+const scoreRoutes = require("./routes/scoreRoutes");
 dotenv.config();
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(helmet());
 app.use(morgan("dev"));
 app.use("/api/auth", authRoutes);
+app.use("/api/score", scoreRoutes);
 app.get("/", (req, res) => {
   res.send("CreditSmart Backend Running 🚀");
 });
